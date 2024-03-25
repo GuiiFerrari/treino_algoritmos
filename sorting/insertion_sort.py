@@ -5,7 +5,7 @@ def gen_int_random_array(size: int, low: int, high: int) -> np.ndarray:
     return np.random.randint(low=low, high=high, size=size)
 
 
-def merge_sort(array: np.ndarray | list) -> np.ndarray | list:
+def insertion_sort(array: np.ndarray | list) -> np.ndarray | list:
     for j in range(1, len(array)):
         key = array[j]
         i = j - 1
@@ -16,7 +16,7 @@ def merge_sort(array: np.ndarray | list) -> np.ndarray | list:
     return array
 
 
-def merge_sort_reversed(array: np.ndarray | list) -> np.ndarray | list:
+def insertion_sort_reversed(array: np.ndarray | list) -> np.ndarray | list:
     for i in range(len(array) - 2, -1, -1):
         key = array[i]
         j = i + 1
@@ -30,9 +30,9 @@ def merge_sort_reversed(array: np.ndarray | list) -> np.ndarray | list:
 def main():
     array = gen_int_random_array(size=5, low=0, high=10)
     print(array)
-    sorted_array = merge_sort(array=array.copy())
+    sorted_array = insertion_sort(array=array.copy())
     print(sorted_array)
-    sorted_array_v2 = merge_sort_reversed(array=array.copy())
+    sorted_array_v2 = insertion_sort_reversed(array=array.copy())
     print(sorted_array_v2)
     array.sort()
     print(
